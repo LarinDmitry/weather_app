@@ -1,0 +1,1 @@
+import{f as e}from"./index-LOww4IuV.js";var t=e(),n=({src:e,alt:n,...r})=>(0,t.jsx)(`img`,{src:e,alt:n,"data-qa":`base-image`,...r});export{n as t};
