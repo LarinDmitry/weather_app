@@ -48,3 +48,9 @@ export interface WeatherApiResponse {
     forecastday: ForecastDay[];
   };
 }
+
+export interface SuggestionProps {
+  id: number;
+  name: string;
+  country: string;
+}

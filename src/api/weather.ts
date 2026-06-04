@@ -13,3 +13,15 @@ export const getWeekForecast = async (city: string) => {
 
   return data;
 };
+
+export const searchCities = async (query: string) => {
+  if (!query || query.length < 3) return [];
+
+  const {data} = await axios.get('https://api.weatherapi.com/v1/search.json', {
+    params: {
+      key: WEATHER_API_KEY,
+      q: query,
+    },
+  });
+  return data;
+};
