@@ -26,5 +26,6 @@
       "store/*": ["./src/store/*"]
     }
   },
-  "include": ["src", "custom.d.ts", "vite.config.ts", "eslint.config.js", "styled.d.ts"]
+  "include": ["src", "custom.d.ts", "vite.config.ts", "eslint.config.js", "styled.d.ts"],
+  "types": ["vitest/globals", "vite-plugin-svgr/client"]
 }

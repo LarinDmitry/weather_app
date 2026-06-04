@@ -1,10 +1,10 @@
 import React, {FC, useState, useEffect, useRef} from 'react';
 import styled from 'styled-components';
-import {searchCities} from 'api/weather';
-import {SuggestionProps} from '../MainTypes';
-import showNotification from 'components/BaseComponents/BaseNotification/BaseNotification';
+import {useSearchCities} from 'api/weather';
+import showNotification from 'components/BaseComponents/BaseNotification';
 import BaseIcon from 'components/BaseComponents/BaseIcon/BaseIcon';
 import Close from 'assets/icons/close.svg';
+import {font_text_reg_md, font_text_reg_sm} from 'theme/fonts';
 
 interface Props {
   onSelectCity: (cityName: string) => void;
@@ -12,30 +12,31 @@ interface Props {
 
 const SearchBar: FC<Props> = ({onSelectCity}) => {
   const [inputValue, setInputValue] = useState<string>('');
-  const [suggestions, setSuggestions] = useState<SuggestionProps[]>([]);
+  const [debouncedValue, setDebouncedValue] = useState<string>('');
   const [isOpen, setIsOpen] = useState(false);
 
   const wrapperRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (inputValue.trim().length < 3) {
-      setSuggestions([]);
-      return;
-    }
-
-    const delayDebounceFn = setTimeout(async () => {
-      try {
-        const results = await searchCities(inputValue);
-        setSuggestions(results);
-        setIsOpen(true);
-      } catch (e) {
-        showNotification('Error while searching', e as string, {type: 'error', toastId: 1});
-        console.error('Error while searching:', e);
-      }
+    const handler = setTimeout(() => {
+      setDebouncedValue(inputValue);
     }, 400);
 
-    return () => clearTimeout(delayDebounceFn);
+    return () => clearTimeout(handler);
   }, [inputValue]);
+
+  const {data: suggestions = [], error} = useSearchCities(debouncedValue);
+
+  useEffect(() => {
+    suggestions.length > 0 && debouncedValue.trim().length >= 3 && setIsOpen(true);
+  }, [suggestions, debouncedValue]);
+
+  useEffect(() => {
+    if (error) {
+      showNotification('Error while searching', error as any, {type: 'error', toastId: 1});
+      console.error('Error while searching:', error);
+    }
+  }, [error]);
 
   useEffect(() => {
     const handleClickOutside = ({target}: MouseEvent) =>
@@ -60,7 +61,15 @@ const SearchBar: FC<Props> = ({onSelectCity}) => {
           onChange={({target: {value}}) => setInputValue(value)}
           onFocus={() => inputValue.length >= 3 && setIsOpen(true)}
         />
-        {inputValue.length > 0 && <CloseIcon icon={<Close />} onClick={() => setInputValue('')} />}
+        {inputValue.length > 0 && (
+          <CloseIcon
+            icon={<Close />}
+            onClick={() => {
+              setInputValue('');
+              setDebouncedValue('');
+            }}
+          />
+        )}
       </InputWrapper>
       {isOpen && suggestions.length > 0 && (
         <Dropdown>
@@ -78,7 +87,7 @@ const SearchBar: FC<Props> = ({onSelectCity}) => {
 const Wrapper = styled.div`
   position: relative;
   width: 16rem;
-  margin: 0 auto 1.5rem auto;
+  margin: 0 auto;
 `;
 
 const InputWrapper = styled.div`
@@ -97,13 +106,13 @@ const CloseIcon = styled(BaseIcon)`
 `;
 
 const Input = styled.input`
+  ${font_text_reg_md};
   width: 100%;
   height: 2.5rem;
   padding: 0 2rem 0 1rem;
   border: none;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  font-size: 1rem;
   outline: none;
 `;
 
@@ -124,10 +133,10 @@ const Dropdown = styled.ul`
 `;
 
 const DropdownItem = styled.li`
+  ${font_text_reg_sm};
   padding: 0.75rem 1rem;
   cursor: pointer;
   color: ${({theme}) => theme.colors.dark080};
-  font-size: 0.9rem;
 `;
 
 const CountrySpan = styled.span`

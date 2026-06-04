@@ -1,7 +1,7 @@
 import type {FC} from 'react';
 import dayjs from 'dayjs';
 import styled from 'styled-components';
-import BaseImage from 'components/BaseComponents/BaseImage/BaseImage';
+import BaseImage from 'components/BaseComponents/BaseImage';
 import {ForecastDay} from '../MainTypes';
 
 interface Props {
@@ -23,7 +23,7 @@ const WeekInfo: FC<Props> = ({data, selectedDate, onSelectDay}) => (
       } = item;
 
       return (
-        <Forecast key={date} isactive={date === selectedDate} onClick={() => onSelectDay(item)}>
+        <Forecast key={date} isactive={date === selectedDate ? 1 : 0} onClick={() => onSelectDay(item)}>
           {dayjs(date).format('D MMM ddd')}
           <BaseImage src={icon} />
           <Max>{maxtemp_c}°C</Max>
@@ -49,7 +49,7 @@ const Wrapper = styled.div`
   }
 `;
 
-const Forecast = styled.div<{isactive: boolean}>`
+const Forecast = styled.div<{isactive: number}>`
   display: grid;
   align-items: center;
   grid-column-gap: 0.5rem;

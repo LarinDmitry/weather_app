@@ -1,0 +1,23 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`ErrorFallback Component > matches snapshot 1`] = `
+<div>
+  <div
+    class="sc-bdDsCe gjpAnh"
+  >
+    <div>
+      Something went wrong:
+    </div>
+    <div
+      class="sc-gtcBCx hcTYVr"
+    >
+      Props Error
+    </div>
+    <button
+      class="sc-dkXsAU inbtaI"
+    >
+      Try again
+    </button>
+  </div>
+</div>
+`;

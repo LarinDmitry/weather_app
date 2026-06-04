@@ -1,0 +1,11 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`NoContentPlug Component > matches snapshot 1`] = `
+<div>
+  <img
+    class="sc-bdDsCe eYpOvD"
+    data-testid="mock-base-image"
+    src="mocked-no-content-path.webp"
+  />
+</div>
+`;

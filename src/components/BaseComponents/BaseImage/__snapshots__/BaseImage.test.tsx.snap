@@ -1,0 +1,20 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`BaseImage > matches snapshot with properties 1`] = `
+<div>
+  <img
+    alt="A"
+    class="snapshot-class"
+    data-qa="base-image"
+    src="/a.png"
+  />
+</div>
+`;
+
+exports[`BaseImage > matches snapshot without optional properties 1`] = `
+<div>
+  <img
+    data-qa="base-image"
+  />
+</div>
+`;

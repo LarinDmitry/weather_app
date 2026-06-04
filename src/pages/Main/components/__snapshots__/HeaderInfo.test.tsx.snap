@@ -1,0 +1,64 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`HeaderInfo Component > matches snapshot 1`] = `
+<div>
+  <div
+    class="sc-bdDsCe etKNFY"
+  >
+    <div
+      class="sc-gtcBCx QvBMH"
+    >
+      United Kingdom
+      , 
+      London
+    </div>
+    <div
+      class="sc-dkXsAU flSwAw"
+    >
+      <div>
+        <div
+          boxh="256"
+          boxw="256"
+          class="sc-jSppWd dxlsjn"
+          data-testid="mock-base-icon"
+          icon="[object Object]"
+        >
+          <svg
+            data-testid="mock-temp-svg"
+          />
+        </div>
+        21
+        °C
+      </div>
+      |
+      <div>
+        15
+         kph
+        <div
+          boxh="17"
+          boxw="18"
+          class="sc-jSppWd dxlsjn"
+          data-testid="mock-base-icon"
+          icon="[object Object]"
+        >
+          <svg
+            data-testid="mock-wind-svg"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      class="sc-hKVpXn lmTIZw"
+    >
+      Partly cloudy
+    </div>
+    <div
+      class="sc-hKVpXn sc-eCQgVK lmTIZw fgsokT"
+    >
+      Feels like 
+      20
+      °C
+    </div>
+  </div>
+</div>
+`;

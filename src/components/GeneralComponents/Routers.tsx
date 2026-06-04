@@ -1,7 +1,7 @@
 import {Fragment, lazy} from 'react';
 import {createBrowserRouter, createRoutesFromChildren, Route} from 'react-router';
-import PageLayout from './PageLayout/PageLayout';
-import ErrorFallback from './ErrorFallback/ErrorFallback';
+import PageLayout from './PageLayout';
+import ErrorFallback from './ErrorFallback';
 
 const Main = lazy(() => import('pages/Main/MainView'));
 const NotFound = lazy(() => import('pages/NotFound/NotFoundView'));

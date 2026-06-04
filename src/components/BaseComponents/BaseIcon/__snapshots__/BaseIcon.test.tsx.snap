@@ -1,0 +1,19 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`BaseIcon > matches snapshot 1`] = `
+<div>
+  <svg
+    aria-hidden="true"
+    class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium sc-bdDsCe buyhe css-1umw9bq-MuiSvgIcon-root"
+    data-qa="base-icon"
+    fill="#fff"
+    focusable="false"
+    viewBox="0 0 100 100"
+  >
+    <path
+      d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"
+      data-testid="mock-path"
+    />
+  </svg>
+</div>
+`;

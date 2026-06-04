@@ -1,10 +1,8 @@
-import {FC, ComponentPropsWithoutRef} from 'react';
+import {FC} from 'react';
+import {BaseImageProps} from 'components/BaseComponents/BaseImage/types';
 
-interface Props extends Omit<ComponentPropsWithoutRef<'img'>, 'src'> {
-  src?: string;
-  alt?: string;
-}
-
-const BaseImage: FC<Props> = ({src, alt, ...other}) => <img src={src} alt={alt} data-qa="base-image" {...other} />;
+const BaseImage: FC<BaseImageProps> = ({src, alt, ...other}) => (
+  <img src={src} alt={alt} data-qa="base-image" {...other} />
+);
 
 export default BaseImage;

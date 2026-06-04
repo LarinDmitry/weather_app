@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import BaseLoader from 'components/BaseComponents/BaseLoader/BaseLoader';
+import BaseLoader from 'components/BaseComponents/BaseLoader';
 
 const Loader = () => (
   <Wrapper>

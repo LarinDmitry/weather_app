@@ -1,16 +1,9 @@
-import type {FC, ChangeEvent, ReactNode} from 'react';
+import type {FC} from 'react';
 import styled from 'styled-components';
 import SvgIcon from '@mui/material/SvgIcon';
+import {BaseIconProps} from './types';
 
-interface Props {
-  icon: ReactNode;
-  fill?: string;
-  boxW?: number | string;
-  boxH?: number | string;
-  onClick?: (e: ChangeEvent<unknown>) => void;
-}
-
-const BaseIcon: FC<Props> = ({icon, onClick, fill = 'rgb(0, 0, 0)', boxW = 24, boxH = 24, ...other}) => (
+const BaseIcon: FC<BaseIconProps> = ({icon, onClick, fill = 'rgb(0, 0, 0)', boxW = 24, boxH = 24, ...other}) => (
   <Wrapper fill={fill} viewBox={`0 0 ${boxW} ${boxH}`} onClick={onClick} data-qa="base-icon" {...other}>
     {icon}
   </Wrapper>

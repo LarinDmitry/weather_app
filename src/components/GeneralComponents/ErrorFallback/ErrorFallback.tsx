@@ -1,31 +1,17 @@
 import {FC} from 'react';
 import styled from 'styled-components';
 import {useRouteError} from 'react-router';
-import Consts from 'services/GlobalConstants';
 import {font_display_med_md, font_display_med_sm} from 'theme/fonts';
-
-interface ErrorMessageProps {
-  message: string;
-}
-
-interface ErrorBoundaryProps {
-  error?: ErrorMessageProps;
-}
-
-const {SOMETHING_WRONG, TRY_AGAIN} = Consts;
+import {ErrorBoundaryProps, ErrorMessageProps} from './types';
 
 const ErrorFallback: FC<ErrorBoundaryProps> = ({error}) => {
   const routerError = useRouteError() as ErrorMessageProps;
 
   return (
     <Wrapper>
-      <div>{SOMETHING_WRONG}:</div>
-      <ErrorText>
-        {
-          error?.message || routerError?.message
-        }
-      </ErrorText>
-      <Button onClick={() => window.location.reload()}>{TRY_AGAIN}</Button>
+      <div>Something went wrong:</div>
+      <ErrorText>{error?.message || routerError?.message}</ErrorText>
+      <Button onClick={() => window.location.reload()}>Try again</Button>
     </Wrapper>
   );
 };

@@ -1,0 +1,9 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`NotificationsContainer Component > matches snapshot 1`] = `
+<div>
+  <div
+    data-testid="mock-toast-container"
+  />
+</div>
+`;

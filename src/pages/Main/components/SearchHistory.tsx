@@ -1,5 +1,6 @@
 import {FC} from 'react';
 import styled from 'styled-components';
+import {font_text_reg_lg, font_text_reg_sm} from 'theme/fonts';
 
 interface Props {
   history: string[];
@@ -39,7 +40,7 @@ const Wrapper = styled.div`
 `;
 
 const Title = styled.span`
-  font-size: 0.85rem;
+  ${font_text_reg_sm};
   color: rgba(255, 255, 255, 0.8);
   margin-right: 0.5rem;
   display: block;
@@ -69,22 +70,22 @@ const HistoryItem = styled.div`
 `;
 
 const CityNameButton = styled.button`
+  ${font_text_reg_sm};
   background: none;
   border: none;
   color: ${({theme}) => theme.colors.dark005};
   cursor: pointer;
-  font-size: 0.9rem;
   padding: 0;
   margin-right: 0.4rem;
   outline: none;
 `;
 
 const RemoveButton = styled.button`
+  ${font_text_reg_lg};
   background: none;
   border: none;
   color: rgba(255, 255, 255, 0.6);
   cursor: pointer;
-  font-size: 1.1rem;
   line-height: 1;
   padding: 0;
   outline: none;

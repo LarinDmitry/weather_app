@@ -4,6 +4,7 @@ import {Location, CurrentWeather} from '../MainTypes';
 import BaseIcon from 'components/BaseComponents/BaseIcon/BaseIcon';
 import Temperature from 'assets/icons/temp.svg';
 import Wind from 'assets/icons/wind.svg';
+import {font_display_reg_sm, font_text_reg_sm, font_text_reg_xl} from 'theme/fonts';
 
 interface Props {
   current: Location | null;
@@ -43,18 +44,18 @@ const Wrapper = styled.div`
 `;
 
 const Country = styled.div`
-  font-size: 1.3rem;
+  ${font_text_reg_xl};
 `;
 
 const Temp = styled.div`
-  font-size: 1.75rem;
+  ${font_display_reg_sm};
   display: flex;
   justify-content: center;
   column-gap: 0.5rem;
 `;
 
 const Weather = styled.div`
-  font-size: 0.9rem;
+  ${font_text_reg_sm};
 `;
 
 const Feels = styled(Weather)`

@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import NoContentPlug from 'components/GeneralComponents/NoContentPlug/NoContentPlug';
+import NoContentPlug from 'components/GeneralComponents/NoContentPlug';
 
 const NotFoundView = () => {
   console.log('Not Found View');
