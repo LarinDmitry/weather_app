@@ -27,6 +27,10 @@ You can check out the live application here: [Weather App](https://larindmitry.g
 * **Environment:** Testing Library (React & Jest-DOM), JSDOM
 * **Code Quality:** ESLint 9 (Flat Config), Prettier, Vite Plugin Checker
 
+### Backend
+* **API:** [WeatherApi](https://www.weatherapi.com/) 
+* **Swagger:** [Api Swagger](https://app.swaggerhub.com/apis-docs/WeatherAPI.com/WeatherAPI/1.0.2)
+
 ---
 
 ## 📂 Project Structure
