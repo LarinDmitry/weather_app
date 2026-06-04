@@ -14,6 +14,7 @@ export default defineConfig({
     react(),
     checker({typescript: true}),
   ],
+  base: 'weather_app',
   server: {
     port: 3000,
   },
