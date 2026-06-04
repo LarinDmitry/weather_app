@@ -16,4 +16,6 @@ const Routers = () => (
   </Fragment>
 );
 
-export const router = createBrowserRouter(createRoutesFromChildren(Routers()));
+export const router = createBrowserRouter(createRoutesFromChildren(Routers()), {
+  basename: '/weather_app',
+});
