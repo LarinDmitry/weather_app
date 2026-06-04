@@ -1,6 +1,14 @@
 # Weather Application
 
-A modern, responsive weather tracking web application built on top of **React 19**, **Vite**, and **TypeScript**. The project features interactive charts, dynamic theming, asynchronous state management via React Query, and comprehensive unit test coverage for atomic components using Vitest.
+A modern, responsive weather tracking web application built on top of **React 19**, **Vite**, and **TypeScript**. 
+The project features interactive charts, dynamic theming, asynchronous state management via React Query,
+and comprehensive unit test coverage for atomic components using Vitest.
+
+---
+
+## 🔗 Live Demo
+
+You can check out the live application here: [Weather App](https://larindmitry.github.io/weather_app/)
 
 ---
 
